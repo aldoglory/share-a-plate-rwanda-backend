@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -41,7 +42,7 @@ public class DonationController {
       }
       else if(message.equals("Donor already has an active donation on that date")){
         return new ResponseEntity<>(message,HttpStatus.CONFLICT);
-        
+
 
 
       }
@@ -83,6 +84,20 @@ public class DonationController {
                 return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
             }
             
+        }
+        @PatchMapping ("/{id}/status")
+        public ResponseEntity<String> updateDonationStatus(@PathVariable UUID id, @RequestParam DonationStatus status) {
+            String message = donationService.updateDonationStatus(id, status);
+            if(message.equals("Donation status updated successfully")){
+                return new ResponseEntity<>(message,HttpStatus.OK);
+
+            }
+            else if(message.equals("The donation with that id does not exist")){
+                return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);
+            }
+            else{
+                return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);
+            }
         }
         @DeleteMapping ("/delete/{id}")
         public ResponseEntity<String> deleteDonation(@PathVariable UUID id) {

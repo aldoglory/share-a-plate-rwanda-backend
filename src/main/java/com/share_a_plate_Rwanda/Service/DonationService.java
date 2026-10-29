@@ -42,7 +42,7 @@ public String saveDonation(Donation donation){
     }
     //rule 3 a new donation always starts as Posted
     donation.setStatus(DonationStatus.POSTED);
-    
+
     donationRepository.save(donation);
     return "Donation saved successfully";
 }
@@ -67,7 +67,7 @@ public String updateDonation(UUID id, Donation donation) {
         return check;
     }
     toUpdate.setDonationDate(donation.getDonationDate());
-    toUpdate.setStatus(donation.geStatus());
+//d2
     toUpdate.setFoodDescription(donation.getFoodDescription());
     toUpdate.setEstimatedPortions(donation.getEstimatedPortions());
     donationRepository.save(toUpdate);
@@ -81,6 +81,39 @@ public String deleteDonation(UUID id ) {
     }
     donationRepository.deleteById(id);
     return "Donation deleted successfully";
+}
+//d2
+public String updateDonationStatus(UUID id, DonationStatus newStatus) {
+    Optional<Donation> existing = donationRepository.findById(id);
+    if (existing.isEmpty()) {
+        return "The donation with that id does not exist";
+        
+    } 
+    Donation donation = existing.get();
+    DonationStatus current = donation.geStatus();
+    if (!isAllowedMove(current,newStatus)) {
+        return "Can not change status from " + current + "to" + newStatus;
+        
+    }
+    donation.setStatus(newStatus);
+    donationRepository.save(donation);
+    return "Donation status updated successfully";
+}
+
+//d2
+private boolean isAllowedMove(DonationStatus current, DonationStatus newStatus) {
+    if (current == DonationStatus.POSTED) {
+        return newStatus == DonationStatus.MATCHED || newStatus == DonationStatus.EXPIRED;
+
+    }
+    else if(current == DonationStatus.MATCHED){
+        return newStatus == DonationStatus.COLLECTED || newStatus == DonationStatus.EXPIRED;
+
+    }
+    else{
+        //collected and expired are final
+        return false;
+    }
 }
 //B2
 public List<Donation> getDonationsByStatus(DonationStatus status) {
