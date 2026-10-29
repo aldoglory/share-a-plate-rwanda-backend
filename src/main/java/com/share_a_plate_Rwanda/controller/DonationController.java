@@ -26,6 +26,7 @@ import com.share_a_plate_Rwanda.model.DonationStatus;
 public class DonationController {
     @Autowired 
     private DonationService donationService;
+    //d1 modyfing a2
     @PostMapping ("/save")
     public ResponseEntity<String> saveDonation(@RequestBody Donation donation ){
       String message = donationService.saveDonation(donation);
@@ -33,6 +34,16 @@ public class DonationController {
         return new ResponseEntity<>(message,HttpStatus.CREATED);
 
         
+      }
+      else if(message.equals("Donation can not be in the past")){
+        return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);
+
+      }
+      else if(message.equals("Donor already has an active donation on that date")){
+        return new ResponseEntity<>(message,HttpStatus.CONFLICT);
+        
+
+
       }
       else{
         return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);

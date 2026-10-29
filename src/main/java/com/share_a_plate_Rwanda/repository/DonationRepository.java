@@ -14,5 +14,7 @@ public interface DonationRepository extends JpaRepository<Donation,UUID> {
     List<Donation> findByStatusOrderByDonationDateAsc(DonationStatus status);
     //b3
     List<Donation> findByDonationDateBetweenOrderByDonationDateAsc(LocalDate start,LocalDate end);
+    //d1
+    boolean existsByDonorIdAndDonationDateAndStatusNot(UUID donorId,LocalDate donationDate, DonationStatus status);
     
 }

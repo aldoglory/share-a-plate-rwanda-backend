@@ -24,12 +24,25 @@ private DonationRepository donationRepository;
 private RecipientRepository recipientRepository;
 @Autowired
 private DonorRepository donorRepository;
-
+// d1 modifying A2
 public String saveDonation(Donation donation){
+    //rule 1 date cannot be in the past
+    if (donation.getDonationDate().isBefore(LocalDate.now())) {
+        return "Donation date cannot be in the past";
+        
+    }
     String check = attachRelations(donation,donation);
     if(check !=null) {
         return check;
     }
+    //rule 2 donor cannot have another active donation on that date
+    if (donation.getDonor() !=null && donationRepository.existsByDonorIdAndDonationDateAndStatusNot(donation.getDonor().getId(),donation.getDonationDate(),DonationStatus.EXPIRED)) {
+        return "Donor already has an active donation on that date";
+        
+    }
+    //rule 3 a new donation always starts as Posted
+    donation.setStatus(DonationStatus.POSTED);
+    
     donationRepository.save(donation);
     return "Donation saved successfully";
 }
