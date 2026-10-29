@@ -42,6 +42,12 @@ public class CollectionPointController {
     public ResponseEntity<List<CollectionPoint>> getAllCollectionPoints() {
         return new ResponseEntity<>(collectionPointService.getAllCollectionPoints(),HttpStatus.OK);
     }
+    //c2
+    @GetMapping ("/free")
+    public ResponseEntity<List<CollectionPoint>> getFreeCollectionPoints() {
+        return new ResponseEntity<>(collectionPointService.getFreeCollectionPoints(), HttpStatus.OK);
+        
+    }
     @GetMapping("/{id}")
     public ResponseEntity<?> getCollectionPointById(@PathVariable UUID id) {
         Optional<CollectionPoint> collectionPoint = collectionPointService.getCollectionPointById(id);

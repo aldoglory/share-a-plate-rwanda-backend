@@ -46,8 +46,12 @@ public class CollectionPointService {
             return "The collection point with that id does not exist";
 
         }
+
         collectionPointRepository.deleteById(id);
         return "Collection point deleted successfully";
     }
-    
+            //c2
+        public List<CollectionPoint> getFreeCollectionPoints(){
+            return collectionPointRepository.findFreeCollectionPoints();
+        }
 }
