@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.share_a_plate_Rwanda.Service.RecipientService;
@@ -44,6 +45,12 @@ public class RecipientController {
         return new ResponseEntity<>(recipientService.getAllRecipients(), HttpStatus.OK);
 
         
+    }
+    //b1
+    @GetMapping ("/by-organisation-name")
+    public ResponseEntity<List<Recipient>> getRecipientByOrganisationName(@RequestParam String organisationName) {
+        return new ResponseEntity<>(recipientService.getRecipientsByOrganisationName(organisationName), HttpStatus.OK);
+
     }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getRecipientById(@PathVariable UUID id) {

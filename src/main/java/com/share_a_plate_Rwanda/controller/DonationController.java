@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.share_a_plate_Rwanda.Service.DonationService;
 import com.share_a_plate_Rwanda.model.Donation;
+import com.share_a_plate_Rwanda.model.DonationStatus;
 
 @RestController 
 @RequestMapping ("/api/donations")
@@ -40,6 +42,11 @@ public class DonationController {
     @GetMapping("/all")
     public ResponseEntity<List<Donation>> getAllDonations(){
         return new ResponseEntity<>(donationService.getAllDonations(),HttpStatus.OK);
+    }
+    //b2
+    @GetMapping ("/by-status")
+    public ResponseEntity<List<Donation>> getDonationsByStatus(@RequestParam DonationStatus status ) {
+        return new ResponseEntity<>(donationService.getDonationsByStatus(status),HttpStatus.OK);
     }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getDonationById(@PathVariable UUID id ){

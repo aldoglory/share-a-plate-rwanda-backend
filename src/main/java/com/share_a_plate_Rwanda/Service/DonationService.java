@@ -1,5 +1,6 @@
 package com.share_a_plate_Rwanda.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.share_a_plate_Rwanda.model.Donation;
+import com.share_a_plate_Rwanda.model.DonationStatus;
 import com.share_a_plate_Rwanda.model.Donor;
 import com.share_a_plate_Rwanda.model.Recipient;
 import com.share_a_plate_Rwanda.repository.DonationRepository;
@@ -66,6 +68,14 @@ public String deleteDonation(UUID id ) {
     }
     donationRepository.deleteById(id);
     return "Donation deleted successfully";
+}
+//B2
+public List<Donation> getDonationsByStatus(DonationStatus status) {
+    return donationRepository.findByStatusOrderByDonationDateAsc(status);
+}
+//b3
+public List<Donation>getDonationsBetween(LocalDate start,LocalDate end) {
+    return donationRepository.findByDonationDateBetweenOrderByDonationDateAsc(start,end);
 }
 // getting recipient and donor from id's
 private String attachRelations(Donation source, Donation target) {

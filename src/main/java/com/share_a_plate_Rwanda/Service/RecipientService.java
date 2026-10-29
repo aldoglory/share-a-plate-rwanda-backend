@@ -50,5 +50,9 @@ public class RecipientService {
         recipientRepository.deleteById(id);
         return "Recipient deleted successfully";
     }
+    //B1
+    public List<Recipient> getRecipientsByOrganisationName(String organisationName) {
+        return recipientRepository.findByOrganisationNameIgnoreCaseOrderByContactNameAsc(organisationName);
+    }
     
 }
