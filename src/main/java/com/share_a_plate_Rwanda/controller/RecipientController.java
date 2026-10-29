@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.share_a_plate_Rwanda.Service.DonorService;
 import com.share_a_plate_Rwanda.Service.RecipientService;
+import com.share_a_plate_Rwanda.model.Donor;
 import com.share_a_plate_Rwanda.model.Recipient;
 
 @RestController 
@@ -25,6 +27,9 @@ import com.share_a_plate_Rwanda.model.Recipient;
 public class RecipientController {
     @Autowired 
     private RecipientService recipientService;
+    //c4
+    @Autowired 
+    private DonorService donorService;
     @PostMapping ("/save")
     public ResponseEntity<String> saveRecipieEntity(@RequestBody Recipient recipient)  {
         String message = recipientService.saveRecipient(recipient);
@@ -51,6 +56,16 @@ public class RecipientController {
     public ResponseEntity<List<Recipient>> getRecipientByOrganisationName(@RequestParam String organisationName) {
         return new ResponseEntity<>(recipientService.getRecipientsByOrganisationName(organisationName), HttpStatus.OK);
 
+    }
+    @GetMapping("/of-donor/{donorId}")
+    public ResponseEntity<?>getRecipientsOfDonor(@PathVariable  UUID donorId) {
+        Optional<Donor> donor = donorService.getDonorById(donorId);
+        if(donor.isEmpty()) {
+            return new ResponseEntity<>("The donor with that id does not exist",HttpStatus.NOT_FOUND);
+        }
+        else{
+            return new ResponseEntity<>(recipientService.getRecipientsOfDonor(donorId),HttpStatus.OK);
+        }
     }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getRecipientById(@PathVariable UUID id) {

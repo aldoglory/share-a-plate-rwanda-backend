@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import javax.print.DocFlavor.READER;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,5 +56,8 @@ public class RecipientService {
     public List<Recipient> getRecipientsByOrganisationName(String organisationName) {
         return recipientRepository.findByOrganisationNameIgnoreCaseOrderByContactNameAsc(organisationName);
     }
-    
+    //c4
+    public List<Recipient> getRecipientsOfDonor(UUID donorId){
+        return recipientRepository.findRecipientsOfDonor(donorId);
+    }
 }
