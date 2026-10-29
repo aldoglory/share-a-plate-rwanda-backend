@@ -65,6 +65,9 @@ public class FoodTypeService {
         foodTypeRepository.delete(foodType);
         return "Food type deleted successfully";
     }
+    public List<FoodType>getUnusedFoodTypes() {
+        return foodTypeRepository.findUnusedFoodTypes();
+    }
 
     
 }

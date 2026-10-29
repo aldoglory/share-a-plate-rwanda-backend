@@ -43,6 +43,10 @@ public class FoodTypeController {
         return new ResponseEntity<>(foodTypeService.getAllFoodTypes(),HttpStatus.OK);
         
     }
+    @GetMapping ("/unused")
+    public ResponseEntity<List<FoodType>>getUnusedFoodTypes(){
+        return new ResponseEntity<>(foodTypeService.getUnusedFoodTypes(),HttpStatus.OK);
+    }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getFoodTypeById(@PathVariable UUID id) {
         Optional<FoodType> foodType = foodTypeService.getFoodTypeById(id);
