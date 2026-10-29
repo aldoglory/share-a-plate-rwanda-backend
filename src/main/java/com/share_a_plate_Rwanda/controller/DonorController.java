@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.share_a_plate_Rwanda.Service.DonorService;
@@ -45,6 +46,11 @@ public class DonorController {
     public ResponseEntity<List<Donor>> getAllDonors() {
         return new ResponseEntity<>(donorService.getAllDonors(),HttpStatus.OK);
 
+    }
+    //c1
+    @GetMapping ("/by-food-type")
+    public ResponseEntity<List<Donor>> getDonorsByFoodType(@RequestParam String name) {
+        return new ResponseEntity<>(donorService.getDonorsByFoodType(name),HttpStatus.OK);
     }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getDonorById(@PathVariable UUID id) {

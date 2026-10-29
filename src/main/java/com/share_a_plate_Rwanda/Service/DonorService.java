@@ -71,6 +71,10 @@ public String deleteDonor(UUID id){
     return "Donor deleted succesfully";
 
 }
+//c1
+public List<Donor> getDonorsByFoodType(String name){
+    return donorRepository.findDonorsByFoodTypeName(name);
+}
 //loading collection point an food types
 
 private String attachRelations(Donor source, Donor target) {
