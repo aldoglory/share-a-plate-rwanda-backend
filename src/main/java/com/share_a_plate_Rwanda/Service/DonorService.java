@@ -15,6 +15,8 @@ import com.share_a_plate_Rwanda.repository.CollectionPointRepository;
 import com.share_a_plate_Rwanda.repository.DonorRepository;
 import com.share_a_plate_Rwanda.repository.FoodTypeRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service 
 public class DonorService {
     @Autowired 
@@ -70,6 +72,51 @@ public String deleteDonor(UUID id){
     donorRepository.deleteById(id);
     return "Donor deleted succesfully";
 
+}
+//d3
+@Transactional 
+public String addFoodTypeToDonor(UUID donorId, UUID foodTypeId) {
+    Optional<Donor> donorOpt = donorRepository.findById(donorId);
+    if(donorOpt.isEmpty()) {
+        return "The donor with that id does not exist";
+    }
+    Optional<FoodType> foodTypeOpt = foodTypeRepository.findById(foodTypeId);
+    if (foodTypeOpt.isEmpty()) {
+        return "That food type does not exist";
+        
+    }
+    Donor donor = donorOpt.get();
+    FoodType foodType = foodTypeOpt.get();
+
+if (donor.getFoodTypes().contains(foodType)){
+    return "The donor already has that food type";
+}
+donor.getFoodTypes().add(foodType);
+donorRepository.save(donor);
+return "Food type added to the donor";}
+//d4
+public String changeCollectionPoint(UUID donorId, int pointNumber) {
+    Optional<Donor>donorOpt = donorRepository.findById(donorId);
+    if (donorOpt.isEmpty()) {
+        return "The donor with that id does not exist";
+        
+    }
+    Optional<CollectionPoint> pointOpt = collectionPointRepository.findByPointNumber(pointNumber);
+    if(pointOpt.isEmpty()) {
+        return "The collection point with that pointNumber does not exist";
+
+    }
+    Donor donor = donorOpt.get();
+    CollectionPoint newPoint = pointOpt.get();
+
+    boolean alreadyHere = donor.getCollectionPoint() !=null && donor.getCollectionPoint().getId().equals(newPoint.getId());
+   if(!alreadyHere && donorRepository.existsByCollectionPoint(newPoint)){
+    return "That collection point is taken by another donor";
+   }
+
+   donor.setCollectionPoint(newPoint);
+   donorRepository.save(donor);
+   return "Collection point changed successfully";
 }
 //c1
 public List<Donor> getDonorsByFoodType(String name){

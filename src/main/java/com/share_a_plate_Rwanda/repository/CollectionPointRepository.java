@@ -1,6 +1,7 @@
 package com.share_a_plate_Rwanda.repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +15,6 @@ public interface CollectionPointRepository extends JpaRepository<CollectionPoint
     //c2
     @Query ("SELECT l FROM CollectionPoint l WHERE NOT EXISTS (SELECT p FROM Donor p WHERE p.collectionPoint = l) ORDER BY l.pointNumber")
     List<CollectionPoint>findFreeCollectionPoints();
+    //d4
+    Optional<CollectionPoint> findByPointNumber(int pointNumber);
 } 

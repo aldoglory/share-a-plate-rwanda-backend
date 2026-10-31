@@ -5,10 +5,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -75,6 +77,36 @@ public class DonorController {
         else {
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
 
+        }
+    }
+    //d3
+    @PutMapping ("/{donorId}/food-types/{foodTypeId}")
+    public ResponseEntity<String> addFoodTypeToDonor(@PathVariable UUID donorId, @PathVariable UUID foodTypeId) {
+        String message = donorService.addFoodTypeToDonor(donorId, foodTypeId);
+        if (message.equals("Food type added to the donor")) {
+            return new ResponseEntity<>(message,HttpStatus.OK);
+            
+        }
+        else if (message.equals("The donor already has that food type")) {
+            return new ResponseEntity<>(message,HttpStatus.CONFLICT);
+
+        }
+        else{
+            return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);
+        }
+    }
+    //d4
+    @PatchMapping ("/{donorId}/collection-point")
+    public ResponseEntity<String> changeCollectionPoint(@PathVariable UUID donorId,@RequestParam int pointNumber) {
+        String message = donorService.changeCollectionPoint(donorId, pointNumber);
+        if (message.equals("Collection point changed succcessfully")){
+            return new ResponseEntity<>(message,HttpStatus.OK);
+
+        } else if (message.equals("That collection point is taken by another donor")) {
+            return new ResponseEntity<>(message,HttpStatus.CONFLICT);
+        }
+        else{
+            return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);
         }
     }
     @DeleteMapping ("/delete/{id}")
