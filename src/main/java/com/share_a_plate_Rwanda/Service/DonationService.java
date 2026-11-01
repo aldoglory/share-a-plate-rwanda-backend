@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.share_a_plate_Rwanda.model.Donation;
@@ -183,4 +186,10 @@ public String cancelDonorDay(UUID donorId, LocalDate date) {
     return count + "donations cancelled";
 
 }
+//bonus paging
+public Page<Donation> getDonationsPage(Pageable pageable) {
+    return donationRepository.findAll(pageable);
+
 }
+}
+
