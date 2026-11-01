@@ -29,7 +29,7 @@ public class CollectedItemController {
 
             
         }
-        else if(message.equals("Collected irems are only for COLLECTED donations")) {
+        else if(message.equals("Collected items are only for COLLECTED donations")) {
             return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);
         }
         else {
