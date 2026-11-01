@@ -90,7 +90,7 @@ public String updateDonationStatus(UUID id, DonationStatus newStatus) {
         
     } 
     Donation donation = existing.get();
-    DonationStatus current = donation.geStatus();
+    DonationStatus current = donation.getStatus();
     if (!isAllowedMove(current,newStatus)) {
         return "Can not change status from " + current + "to" + newStatus;
         

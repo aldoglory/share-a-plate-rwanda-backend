@@ -43,7 +43,7 @@ public class Donation{
     public LocalDate getDonationDate(){return donationDate;}
     public void setDonationDate(LocalDate donationDate) {this.donationDate = donationDate;}
 
-    public DonationStatus geStatus() {return status;}
+    public DonationStatus getStatus() {return status;}
     public void setStatus(DonationStatus status ) {this.status = status;}
 
     public String getFoodDescription() {return foodDescription;}
