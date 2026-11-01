@@ -12,6 +12,7 @@ import com.share_a_plate_Rwanda.model.Donation;
 import com.share_a_plate_Rwanda.model.DonationStatus;
 import com.share_a_plate_Rwanda.model.Donor;
 import com.share_a_plate_Rwanda.model.Recipient;
+import com.share_a_plate_Rwanda.repository.CollectedItemRepository;
 import com.share_a_plate_Rwanda.repository.DonationRepository;
 import com.share_a_plate_Rwanda.repository.DonorRepository;
 import com.share_a_plate_Rwanda.repository.RecipientRepository;
@@ -24,6 +25,8 @@ private DonationRepository donationRepository;
 private RecipientRepository recipientRepository;
 @Autowired
 private DonorRepository donorRepository;
+@Autowired 
+private CollectedItemRepository collectedItemRepository;
 // d1 modifying A2
 public String saveDonation(Donation donation){
     //rule 1 date cannot be in the past
@@ -73,8 +76,21 @@ public String updateDonation(UUID id, Donation donation) {
     donationRepository.save(toUpdate);
     return "Donation updated successfully";
 }
-
-public String deleteDonation(UUID id ) {
+//e3
+public String deleteDonation(UUID id) {
+    Optional<Donation>existing = donationRepository.findById(id);
+    if (existing.isEmpty()) {
+        return "The donation with that id does not exist";
+        
+    }
+    if (collectedItemRepository.existsByDonation(existing.get())) {
+        return "That donation has collected items, delete them first";
+        
+    }
+    donationRepository.deleteById(id);
+    return "Donation deleted successfully";
+}
+/*public String deleteDonation(UUID id ) {
     if (!donationRepository.existsById(id)) {
         return "The donation with that id does not exist";
         
@@ -82,6 +98,7 @@ public String deleteDonation(UUID id ) {
     donationRepository.deleteById(id);
     return "Donation deleted successfully";
 }
+    */
 //d2
 public String updateDonationStatus(UUID id, DonationStatus newStatus) {
     Optional<Donation> existing = donationRepository.findById(id);

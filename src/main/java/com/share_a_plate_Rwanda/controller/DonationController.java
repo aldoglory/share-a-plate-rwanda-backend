@@ -99,6 +99,7 @@ public class DonationController {
                 return new ResponseEntity<>(message,HttpStatus.BAD_REQUEST);
             }
         }
+        /* 
         @DeleteMapping ("/delete/{id}")
         public ResponseEntity<String> deleteDonation(@PathVariable UUID id) {
             String message = donationService.deleteDonation(id);
@@ -109,6 +110,25 @@ public class DonationController {
             else{
                 return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);
             }
+        }*/
+
+       //e3
+       @DeleteMapping ("/delete/{id}")
+       public ResponseEntity<String> deleteDonation(@PathVariable UUID id) {
+        String message = donationService.deleteDonation(id);
+        if (message.equals("Donation deleted successfully")) {
+            return new ResponseEntity<>(message,HttpStatus.OK);
+            
         }
+        else if(message.equals("That donation has collected items, delete them first")){
+            return new ResponseEntity<>(message,HttpStatus.CONFLICT);
+
+
+        }
+        else {
+            return new ResponseEntity<>(message,HttpStatus.NOT_FOUND);
+        }
+
+       }
     
 }

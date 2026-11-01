@@ -44,4 +44,14 @@ public class CollectedItemService {
 public List<CollectedItem> getHistoryOfRecipient(String registrationNumber) {
     return collectedItemRepository.findByRecipientRegistrationNumber(registrationNumber);
 }
+//e3
+public String deleteCollectedItem(UUID id) {
+    if (!collectedItemRepository.existsById(id)) {
+        return "The collected item with that id does not exist";
+
+        
+    }
+    collectedItemRepository.deleteById(id);
+    return "Collected item deleted successfully";
+}
 }
