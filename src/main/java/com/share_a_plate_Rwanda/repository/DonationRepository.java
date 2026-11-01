@@ -26,6 +26,10 @@ public interface DonationRepository extends JpaRepository<Donation,UUID> {
     @Modifying 
     @Query ("UPDATE Donation d SET d.status = :expired WHERE d.donor.id = :donorId AND d.donationDate = :date AND d.status <> :collected")
     int cancelDonorDay(@Param ("donorId") UUID donorId,@Param("date") LocalDate date, @Param ("expired") DonationStatus expired, @Param("collected") DonationStatus collected);
+    //bonus
+    long countByDonationDate(LocalDate donatiLocalDate);
+    long countByStatus(DonationStatus status);
     
+
     
 }
