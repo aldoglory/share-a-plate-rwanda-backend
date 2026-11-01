@@ -60,6 +60,13 @@ public class DonationController {
     public ResponseEntity<List<Donation>> getDonationsByStatus(@RequestParam DonationStatus status ) {
         return new ResponseEntity<>(donationService.getDonationsByStatus(status),HttpStatus.OK);
     }
+    //f1
+    @GetMapping ("/stats/by-status")
+    public ResponseEntity<List<Object[]>>getDonationStatsByStatus(){
+
+        return new ResponseEntity<>(donationService.getDonationStatsByStatus(),HttpStatus.OK);
+
+    }
     @GetMapping ("/{id}")
     public ResponseEntity<?> getDonationById(@PathVariable UUID id ){
         Optional<Donation> donation = donationService.getDonationById(id);

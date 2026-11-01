@@ -169,4 +169,9 @@ private String attachRelations(Donation source, Donation target) {
     }
     return null;
 }
+
+//f1
+public List<Object[]>getDonationStatsByStatus() {
+    return donationRepository.countDonationsByStatus();
+}
 }
