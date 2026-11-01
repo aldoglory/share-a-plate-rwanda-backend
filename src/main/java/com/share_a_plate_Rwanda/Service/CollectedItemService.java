@@ -1,6 +1,7 @@
 package com.share_a_plate_Rwanda.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,4 +39,9 @@ public class CollectedItemService {
     collectedItem.setDonation(donation);
     collectedItemRepository.save(collectedItem);
     return "Collected item saved successfully";
-}}
+}
+//e2
+public List<CollectedItem> getHistoryOfRecipient(String registrationNumber) {
+    return collectedItemRepository.findByRecipientRegistrationNumber(registrationNumber);
+}
+}
