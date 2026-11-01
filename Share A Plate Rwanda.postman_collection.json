@@ -1,0 +1,1338 @@
+{
+  "info": {
+    "_postman_id": "be171848-6558-4950-a4b2-a959e2ef4d47",
+    "name": "Share A Plate Rwanda",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58465335",
+    "_collection_link": "https://go.postman.co/collection/58465335-be171848-6558-4950-a4b2-a959e2ef4d47?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Food Types",
+      "item": [
+        {
+          "name": "save Dairy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Diary\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save Bakery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bakery\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saving cooked meals",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"cooked meals\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save Fresh Products",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fresh products\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Displaying food types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "displaying cooked meals with id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/43318f62-96b6-47eb-a237-c1aa667a96fc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "43318f62-96b6-47eb-a237-c1aa667a96fc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updating cooked meals",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Cooked Meals\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/update/43318f62-96b6-47eb-a237-c1aa667a96fc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "update",
+                "43318f62-96b6-47eb-a237-c1aa667a96fc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saving food to be deleted",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test food\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleting food type",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/food-types/delete/4c8b138a-b5f6-4981-96e9-928fa995ff8d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "food-types",
+                "delete",
+                "4c8b138a-b5f6-4981-96e9-928fa995ff8d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Collection Points",
+      "item": [
+        {
+          "name": "test point",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 5,\n  \"name\": \"test point\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save point 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 2,\n  \"name\": \"Remera point\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save point 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 1,\n  \"name\": \"Nyabugogo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save point 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 3,\n  \"name\": \"Kimironko point\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save point 4",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 4,\n  \"name\": \"Kicukiro point\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "displaying all collection points",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updating point 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pointNumber\": 1,\n  \"name\": \"Nyabugogo point\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/update/e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "update",
+                "e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleting test point",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/collection-points/delete/e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "collection-points",
+                "delete",
+                "e4e7dd07-8d30-48d0-87ab-2f0c0178aa8f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Donors",
+      "item": [
+        {
+          "name": "saving donor A",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"businessName\":\"Heaven restaurant\",\n    \"contactName\":\"Mugisha aimable\",\n    \"phone\":\"07873672673\",\n    \"collectionPoint\":{\"id\":\"{{0af3e71f-8ffb-4fa1-b78e-e31bc2c27ec3}}\",\n    \"foodTypes\": [{\"id\":\"{{43318f62-96b6-47eb-a237-c1aa667a96fc}}\"},{\"id\":\"{{24adfbc9-889b-4bb0-9024-b96b00899916}}\"}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donors/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donors",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saving Donor B",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleting temporary donor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saving Donor C",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updating donor c",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "viewing all donors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "saving temp Donor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"businessName\": \"Temp Donor\",\n  \"contactName\": \"Test\",\n  \"phone\": \"0700000000\",\n  \"collectionPoint\": null,\n  \"foodTypes\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donors/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donors",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recipients",
+      "item": [
+        {
+          "name": "recipient 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Jacques Tuyisenge\",\n  \"registrationNumber\": \"NGO-01\",\n  \"phone\": \"078980200\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recipient 4",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updating recipient 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recipient 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recipient 5",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "temporary recipient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "recipient 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationName\": \"Gisimba\",\n  \"contactName\": \"Mukarukundo jeaninie\",\n  \"registrationNumber\": \"NGO-02\",\n  \"phone\": \"079837490\",\n  \"district\": \"Nyarugenge\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "viewing recipients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deleting temp  recipient",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Donations",
+      "item": [
+        {
+          "name": "updating donation 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-10-05\",\n  \"status\": \"COLLECTED\",\n  \"foodDescription\": \"Rice and beans \",\n  \"estimatedPortions\": 60,\n  \"recipient\": {\n    \"id\": \"9a4e6974-a48d-48d1-814e-aeb4ccf82015\"\n  },\n  \"donor\": {\n    \"id\": \"5f116d68-5858-4c17-9bd4-3bc2d6c6e3b6\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donations/update/ab4cc1a6-418b-481e-a4aa-0f1b1cd1a8e2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "update",
+                "ab4cc1a6-418b-481e-a4aa-0f1b1cd1a8e2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-10-05\",\n  \"status\": \"COLLECTED\",\n  \"foodDescription\": \"Rice, beans and stew\",\n  \"estimatedPortions\": 60,\n  \"recipient\": {\n    \"id\": \"9a4e6974-a48d-48d1-814e-aeb4ccf82015\"\n  },\n  \"donor\": {\n    \"id\": \"5f116d68-5858-4c17-9bd4-3bc2d6c6e3b6\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donations/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "danation 2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-10-20\",\n  \"status\": \"EXPIRED\",\n  \"foodDescription\": \"Leftover buffet meals\",\n  \"estimatedPortions\": 35,\n  \"recipient\": {\n    \"id\": \"9a4e6974-a48d-48d1-814e-aeb4ccf82015\"\n  },\n  \"donor\": {\n    \"id\": \"5f116d68-5858-4c17-9bd4-3bc2d6c6e3b6\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donations/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 4",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 5",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 6",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-10-25\",\n  \"status\": \"MATCHED\",\n  \"foodDescription\": \"Avocados and cabbage\",\n  \"estimatedPortions\": 45,\n  \"recipient\": {\n    \"id\": \"d8f6d768-d60f-4dd7-81d6-534ab85d88b7\"\n  },\n  \"donor\": {\n    \"id\": \"dbdcb70b-088c-401e-9383-605fd068ad5c\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donations/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 7",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 8",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 9",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "donation 10",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-11-20\",\n  \"status\": \"POSTED\",\n  \"foodDescription\": \"Pineapples and passion fruit\",\n  \"estimatedPortions\": 30,\n  \"recipient\": {\n    \"id\": \"d8f6d768-d60f-4dd7-81d6-534ab85d88b7\"\n  },\n  \"donor\": {\n    \"id\": \"dbdcb70b-088c-401e-9383-605fd068ad5c\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/donations/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "temp donation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"donationDate\": \"2026-10-01\",\n  \"status\": \"POSTED\",\n  \"foodDescription\": \"Temp Donation\",\n  \"estimatedPortions\": 1,\n  \"recipient\": {\n    \"id\": \"9a4e6974-a48d-48d1-814e-aeb4ccf82015\"\n  },\n  \"donor\": {\n    \"id\": \"5f116d68-5858-4c17-9bd4-3bc2d6c6e3b6\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "viewing all donations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleting temp donation",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/donations/delete/4d4e904e-aea6-4838-b1ec-911811c4bc6d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "delete",
+                "4d4e904e-aea6-4838-b1ec-911811c4bc6d"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part B",
+      "item": [
+        {
+          "name": "B1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/recipients/by-organisation-name?organisationName=gisimba",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "recipients",
+                "by-organisation-name"
+              ],
+              "query": [
+                {
+                  "key": "organisationName",
+                  "value": "gisimba"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B2",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/api/donations/by-status?status=POSTED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "api",
+                "donations",
+                "by-status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "POSTED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B3",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
