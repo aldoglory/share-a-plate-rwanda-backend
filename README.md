@@ -1,7 +1,7 @@
 # share-a-plate-rwanda-backend
 
 ## Share A Plate Rwanda
-**name: ** Ruterana Gloire 
+# name: ** Ruterana Gloire 
 ** ID: ** 27717
 ** Project: ** share-a-plate-rwanda-backend
 # How to run the API
