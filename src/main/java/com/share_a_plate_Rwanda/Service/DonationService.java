@@ -17,6 +17,8 @@ import com.share_a_plate_Rwanda.repository.DonationRepository;
 import com.share_a_plate_Rwanda.repository.DonorRepository;
 import com.share_a_plate_Rwanda.repository.RecipientRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service 
 public class DonationService {
 @Autowired 
@@ -173,5 +175,12 @@ private String attachRelations(Donation source, Donation target) {
 //f1
 public List<Object[]>getDonationStatsByStatus() {
     return donationRepository.countDonationsByStatus();
+}
+//f2
+@Transactional 
+public String cancelDonorDay(UUID donorId, LocalDate date) {
+    int count = donationRepository.cancelDonorDay(donorId,date,DonationStatus.EXPIRED,DonationStatus.COLLECTED);
+    return count + "donations cancelled";
+
 }
 }
